@@ -86,6 +86,9 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
+				"deploy": [
+					"composer cache-clear; bin/console tailwind:build --minify; bin/console asset-map:compile"
+				],
 				"cache-clear": [
 					"sudo -u www-data bin/console cache:clear && sudo -u www-data bin/console cache:warmup"
 				],
