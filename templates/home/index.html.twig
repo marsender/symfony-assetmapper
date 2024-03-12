@@ -1,14 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello!{% endblock %}
+{% block title %}Hello!
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello here!</h1>
-		<p><img src="{{ asset('images/beach.jpeg') }}"></p>
-</div>
+	<h1 class="text-3xl font-bold underline">Hello here!</h1>
+	<p><img src="{{ asset('images/beach.jpeg') }}"></p>
 {% endblock %}
