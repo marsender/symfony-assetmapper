@@ -1,0 +1,52 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"php-cs-fixer.executable": "/opt/git/marsender/symfony-assetmapper/vendor/bin/php-cs-fixer",
+		"php-cs-fixer.configFile": "/opt/git/marsender/symfony-assetmapper/.php-cs-fixer.php",
+		"php-cs-fixer.onSave": true,
+		"editor.insertSpaces": false,
+		"editor.tabSize": 2,
+		"editor.formatOnSave": false,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"prettier.prettierPath": "",
+		"prettier.singleQuote": true,
+		"prettier.useTabs": true,
+		"prettier.tabWidth": 2,
+		"prettier.printWidth": 500,
+		"prettier.semi": true,
+		"[php]": {
+			"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+		},
+		"[twig]": {
+			"editor.defaultFormatter": "mblode.twig-language-2"
+		},
+		"twig-language-2.spaceClose": true,
+		"twig-language-2.preserveComment": true
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Listen for Xdebug",
+				"type": "php",
+				"request": "launch",
+				"port": 9003
+			}
+		]
+	},
+	"extensions": {
+		"recommendations": [
+			"xdebug.php-debug",
+			"dbaeumer.vscode-eslint",
+			"bmewburn.vscode-intelephense-client",
+			"higoka.php-cs-fixer",
+			"esbenp.prettier-vscode",
+			"aswinkumar863.smarty-template-support",
+			"mblode.twig-language-2"
+		]
+	}
+}
