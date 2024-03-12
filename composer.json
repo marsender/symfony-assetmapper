@@ -85,8 +85,14 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
-    },
+        ],
+				"cache-clear": [
+					"sudo -u www-data bin/console cache:clear && sudo -u www-data bin/console cache:warmup"
+				],
+				"cs-fixer": [
+					"vendor/bin/php-cs-fixer fix --allow-risky=yes --using-cache=no --config .php-cs-fixer.php src tests"
+				]
+			},
     "conflict": {
         "symfony/symfony": "*"
     },
