@@ -15,19 +15,6 @@ This project require the following to get started :
 - PHP 8.2
 - Web server Apache 2.4
 
-## Memo to add asset mapper and tailwind to an existing app
-
-Add asset-mapper package
-```bash
-composer require symfony/asset-mapper
-```
-
-Add Tailwind CSS bundle
-```bash
-composer require symfonycasts/tailwind-bundle
-bin/console tailwind:init
-```
-
 ## Install
 
 Clone [Symfony assetmapper repository](https://github.com/marsender/symfony-assetmapper)
@@ -85,12 +72,17 @@ sudo a2ensite symfony-assetmapper
 sudo apache2ctl restart
 ```
 
-Clear symfony cache
+Build for production
 ```bash
-composer cache-clear
+composer deploy
 ```
 
-## Sample to add or remove importmaps
+Open the app in your browser [http://symfony-assetmapper.localhost/](http://symfony-assetmapper.localhost/)
+
+
+# Delopper instructions
+
+## Add or remove importmaps
 
 This will add tailwing in /importmap.php file
 
@@ -114,7 +106,7 @@ php bin/console importmap:outdated
 php bin/console importmap:update # add packagename to update only one package
 ```
 
-## Tailwind bundle usage
+## Tailwind dev watch
 
 This will watch for changes to your assets/styles/app.css file and automatically recompile it when needed.
 If you refresh the page, the final app.css file will already contain the compiled CSS.
@@ -123,12 +115,21 @@ If you refresh the page, the final app.css file will already contain the compile
 bin/console tailwind:build --watch
 ```
 
-## Build for production
+## Clear symfony cache
 
 ```bash
 composer cache-clear
-#bin/console importmap:install
-bin/console tailwind:build --minify
-bin/console asset-map:compile
 ```
 
+## Memo to add asset mapper and tailwind to an existing project
+
+Add asset-mapper package
+```bash
+composer require symfony/asset-mapper
+```
+
+Add Tailwind CSS bundle
+```bash
+composer require symfonycasts/tailwind-bundle
+bin/console tailwind:init
+```
