@@ -5,7 +5,7 @@ This projects is a test for Symfony 7 assetmapper
 References :
 
 - [Symfony AssetMapper doc](https://symfony.com/doc/current/frontend/asset_mapper.html)
-- [Upgrading Symfony Websites to AssetMapper deo](https://symfony.com/blog/upgrading-symfony-websites-to-assetmapper)
+- [Upgrading Symfony Websites to AssetMapper](https://symfony.com/blog/upgrading-symfony-websites-to-assetmapper)
 - [Tailwind CSS bundle for Symfony](https://symfony.com/bundles/TailwindBundle/current/index.html)
 
 ## Requirements
