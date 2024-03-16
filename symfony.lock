@@ -288,6 +288,9 @@
             "config/routes/web_profiler.yaml"
         ]
     },
+    "symfonycasts/sass-bundle": {
+        "version": "v0.6.0"
+    },
     "symfonycasts/tailwind-bundle": {
         "version": "v0.5.1"
     },

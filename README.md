@@ -74,11 +74,17 @@ sudo apache2ctl restart
 
 Build for production
 ```bash
+composer cache-clear
+bin/console tailwind:build --minify
+bin/console sass:build
+bin/console asset-map:compile
+```
+or use the command
+```bash
 composer deploy
 ```
 
 Open the app in your browser [http://symfony-assetmapper.localhost/](http://symfony-assetmapper.localhost/)
-
 
 # Delopper instructions
 
@@ -101,9 +107,9 @@ bin/console debug:asset-map
 
 ```bash
 # List outedated packages
-php bin/console importmap:outdated
+bin/console importmap:outdated
 # Update oudated packages
-php bin/console importmap:update # add packagename to update only one package
+bin/console importmap:update # add packagename to update only one package
 ```
 
 ## Tailwind dev watch
@@ -121,15 +127,25 @@ bin/console tailwind:build --watch
 composer cache-clear
 ```
 
-## Memo to add asset mapper and tailwind to an existing project
+## Memo to add asset mapper and Saas to an existing project
 
 Add asset-mapper package
 ```bash
 composer require symfony/asset-mapper
 ```
 
-Add Tailwind CSS bundle
+Add [Sass for Symfony](https://symfony.com/bundles/SassBundle/current/index.html)
+```bash
+composer require symfonycasts/sass-bundle
+```
+
+Add [Tailwind CSS for Symfony](https://symfony.com/bundles/TailwindBundle/current/index.html)
 ```bash
 composer require symfonycasts/tailwind-bundle
 bin/console tailwind:init
+```
+
+Add [Bootstrap Saas](https://github.com/twbs/bootstrap) (if required for the project)
+```bash
+composer require twbs/bootstrap
 ```

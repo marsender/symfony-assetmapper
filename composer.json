@@ -42,6 +42,7 @@
         "symfony/validator": "7.0.*",
         "symfony/web-link": "7.0.*",
         "symfony/yaml": "7.0.*",
+        "symfonycasts/sass-bundle": "^0.6.0",
         "symfonycasts/tailwind-bundle": "^0.5.1",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0"
@@ -87,7 +88,7 @@
             "@auto-scripts"
         ],
 				"deploy": [
-					"composer cache-clear; bin/console tailwind:build --minify; bin/console asset-map:compile"
+					"composer cache-clear; bin/console tailwind:build --minify; bin/console sass:build; bin/console asset-map:compile"
 				],
 				"cache-clear": [
 					"sudo -u www-data bin/console cache:clear && sudo -u www-data bin/console cache:warmup"
