@@ -177,10 +177,6 @@ composer config --json extra.symfony.docker 'true'
 # If you want to use the worker mode of FrankenPHP
 composer require runtime/frankenphp-symfony
 
-# Re-execute the recipes to update the Docker-related files according to the packages you use
-rm symfony.lock
-composer symfony:sync-recipes --force --verbose
-
 # Refresh JavaScript dependencies
 yarn install --force
 ```
@@ -195,17 +191,16 @@ POSTGRES_DB=app
 POSTGRES_VERSION=16
 POSTGRES_CHARSET=utf8
 # Add pdo extensions in the `Dockerfile` file
-RUN set -eux; \
-	install-php-extensions \
-		@composer \
-		apcu \
-		intl \
-		opcache \
-		zip \
-		pdo \
-		pdo_mysql \
-		pdo_pgsql \
-	;
+###> doctrine/doctrine-bundle ###
+RUN install-php-extensions pdo_pgsql
+RUN install-php-extensions pdo_mysql
+###< doctrine/doctrine-bundle ###
+```
+
+Re-execute the recipes to update the Docker-related files according to the packages you use
+```bash
+rm symfony.lock
+composer symfony:sync-recipes --force --verbose
 ```
 
 Build the Docker images
