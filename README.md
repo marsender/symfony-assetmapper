@@ -152,6 +152,8 @@ composer require twbs/bootstrap
 
 ## Memo to add Symfony Docker templates to an existing project
 
+If not already done, [install Docker Compose](https://docs.docker.com/compose/install/) (v2.10+)
+
 Read the [official doc](https://github.com/dunglas/symfony-docker/blob/main/docs/existing-project.md)
 
 Clone the templates repository
