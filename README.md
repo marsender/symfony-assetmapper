@@ -149,3 +149,31 @@ Add [Bootstrap Saas](https://github.com/twbs/bootstrap) (if required for the pro
 ```bash
 composer require twbs/bootstrap
 ```
+
+## Memo to add [Symfony Docker templates](https://github.com/dunglas/symfony-docker)
+
+Read the [official doc](https://github.com/dunglas/symfony-docker/blob/main/docs/existing-project.md)
+
+```bash
+cd ~
+git clone git@github.com:dunglas/symfony-docker.git
+cd ~/symfony-docker/
+rm -rf .git
+
+cd /opt/git/marsender/symfony-assetmapper
+cp ~/symfony-docker/compose.* ./
+cp ~/symfony-docker/.dockerignore ./
+cp -Rp ~/symfony-docker/frankenphp ./
+cp -Rp ~/symfony-docker/.github/. ./
+
+# Enable the Docker support of Symfony Flex
+composer config --json extra.symfony.docker 'true'
+composer require runtime/frankenphp-symfony
+
+# Re-execute the recipes to update the Docker-related files according to the packages you use
+rm symfony.lock
+composer symfony:sync-recipes --force --verbose
+
+# Refresh JavaScript dependencies
+yarn install --force
+```
