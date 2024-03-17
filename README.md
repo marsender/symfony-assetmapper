@@ -191,10 +191,17 @@ POSTGRES_DB=app
 POSTGRES_VERSION=16
 POSTGRES_CHARSET=utf8
 # Add pdo extensions in the `Dockerfile` file
-###> doctrine/doctrine-bundle ###
-RUN install-php-extensions pdo_pgsql
-RUN install-php-extensions pdo_mysql
-###< doctrine/doctrine-bundle ###
+RUN set -eux; \
+	install-php-extensions \
+		@composer \
+		apcu \
+		intl \
+		opcache \
+		zip \
+		pdo \
+		pdo_mysql \
+		pdo_pgsql \
+	;
 ```
 
 Re-execute the recipes to update the Docker-related files according to the packages you use
