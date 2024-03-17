@@ -55,6 +55,7 @@ services:
 volumes:
   caddy_data:
   caddy_config:
+
 ###> symfony/mercure-bundle ###
 ###< symfony/mercure-bundle ###
 
