@@ -51,15 +51,19 @@ jobs:
         run: docker compose exec -T php bin/console -e test doctrine:database:create
       -
         name: Update schema
+        if: false # Remove this line if Doctrine ORM is installed
         run: docker compose exec -T php bin/console -e test doctrine:schema:update --force --complete
       -
         name: Doctrine Schema Validator
+        if: false # Remove this line if Doctrine ORM is installed
         run: docker compose exec -T php bin/console -e test doctrine:schema:validate
       -
         name: Run migrations
+        if: false # Remove this line if Doctrine ORM is installed
         run: docker compose exec -T php bin/console -e test doctrine:migrations:migrate --no-interaction
       -
         name: Run fixtures
+        if: false # Remove this line if Doctrine ORM is installed
         run: docker compose exec -T php bin/console -e test doctrine:fixtures:load -n
       -
         name: Run PHPUnit
