@@ -2,13 +2,15 @@
 
 ![CI](https://github.com/marsender/symfony-assetmapper/workflows/CI/badge.svg)
 
-This projects is a test for Symfony 7 assetmapper and Symfony Docker github CI
+This project is a starter webapp with Symfony 7 assetmapper, Tailwind and Saas.
+It also contains a Docker github CI.
 
 References :
 
 - [Symfony AssetMapper doc](https://symfony.com/doc/current/frontend/asset_mapper.html)
 - [Upgrading Symfony Websites to AssetMapper](https://symfony.com/blog/upgrading-symfony-websites-to-assetmapper)
 - [Tailwind CSS bundle for Symfony](https://symfony.com/bundles/TailwindBundle/current/index.html)
+- [Sass bundle for Symfony](https://symfony.com/bundles/SassBundle/current/index.html)
 - [Symfony Docker](https://github.com/dunglas/symfony-docker)
 
 ## Requirements
