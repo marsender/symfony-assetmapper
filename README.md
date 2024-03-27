@@ -2,7 +2,7 @@
 
 ![CI](https://github.com/marsender/symfony-assetmapper/workflows/CI/badge.svg)
 
-This project is a starter webapp with Symfony 7 assetmapper, Tailwind and Saas.
+This project is a starter webapp with Symfony 7 assetmapper, Tailwind and Sass.
 It also contains a Docker github CI.
 
 References :
@@ -81,7 +81,7 @@ Build for production
 ```bash
 composer cache-clear
 bin/console tailwind:build --minify
-bin/console sass:build
+bin/console sass:build # --watch
 bin/console asset-map:compile
 ```
 or use the command
@@ -132,7 +132,7 @@ bin/console tailwind:build --watch
 composer cache-clear
 ```
 
-## Memo to add asset mapper and Saas to an existing project
+## Memo to add asset mapper and Sass to an existing project
 
 Add asset-mapper package
 ```bash
@@ -150,7 +150,7 @@ composer require symfonycasts/tailwind-bundle
 bin/console tailwind:init
 ```
 
-Add [Bootstrap Saas](https://github.com/twbs/bootstrap) (if required for the project)
+Add [Bootstrap Sass](https://github.com/twbs/bootstrap) (if required for the project)
 ```bash
 composer require twbs/bootstrap
 ```
@@ -209,6 +209,11 @@ RUN set -eux; \
 		pdo_mysql \
 		pdo_pgsql \
 	;
+```
+
+Comment out the dbname suffix for test database in `config/packages/doctrine.yaml`
+```yaml
+#dbname_suffix: '_test%env(default::TEST_TOKEN)%'
 ```
 
 Re-execute the recipes to update the Docker-related files according to the packages you use
