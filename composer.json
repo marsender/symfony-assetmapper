@@ -90,10 +90,10 @@
 			"@auto-scripts"
 		],
 		"deploy": [
-			"composer cache-clear; bin/console tailwind:build --minify; bin/console sass:build; bin/console asset-map:compile"
+			"composer cache-clear; bin/console tailwind:build --minify; bin/console sass:build; rm -rf public/assets; bin/console asset-map:compile"
 		],
 		"cache-clear": [
-			"sudo -u www-data bin/console cache:clear && sudo -u www-data bin/console cache:warmup"
+			"sudo -u www-data bin/console cache:clear"
 		],
 		"cs-fixer": [
 			"vendor/bin/php-cs-fixer fix --allow-risky=yes --using-cache=no --config .php-cs-fixer.php src tests"
