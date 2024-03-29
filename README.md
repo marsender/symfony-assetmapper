@@ -10,6 +10,7 @@ References :
 - [Symfony AssetMapper doc](https://symfony.com/doc/current/frontend/asset_mapper.html)
 - [Upgrading Symfony Websites to AssetMapper](https://symfony.com/blog/upgrading-symfony-websites-to-assetmapper)
 - [Tailwind CSS bundle for Symfony](https://symfony.com/bundles/TailwindBundle/current/index.html)
+- [Flowbite](https://flowbite.com/docs/getting-started/symfony/)
 - [Sass bundle for Symfony](https://symfony.com/bundles/SassBundle/current/index.html)
 - [Symfony Docker](https://github.com/dunglas/symfony-docker)
 
@@ -34,6 +35,11 @@ Install php dependencies
 cd /opt/git/marsender/symfony-assetmapper
 composer install
 sudo chown -R www-data:$USER var
+```
+
+Install importmap vendor files
+```bash
+bin/console importmap:install
 ```
 
 Add project host
@@ -95,7 +101,7 @@ Open the app in your browser [http://symfony-assetmapper.localhost/](http://symf
 
 ## Add or remove importmaps
 
-This will add tailwing in /importmap.php file
+This will add tailwind in /importmap.php file
 
 ```bash
 bin/console importmap:require tailwindcss
@@ -105,16 +111,22 @@ bin/console importmap:remove tailwindcss
 ## Debugging: Seeing All Mapped Assets
 
 ```bash
-bin/console debug:asset-map
+bin/console debug:asset-map --full
 ```
 
-## Upgrade importmap packages
+## Update importmap packages
 
 ```bash
 # List outedated packages
 bin/console importmap:outdated
 # Update oudated packages
 bin/console importmap:update # add packagename to update only one package
+```
+
+## Install ES Module Shims for older browsers compatibility
+
+```bash
+bin/console importmap:require es-module-shims
 ```
 
 ## Tailwind dev watch
@@ -124,6 +136,24 @@ If you refresh the page, the final app.css file will already contain the compile
 
 ```bash
 bin/console tailwind:build --watch
+```
+
+## Install Flowbite
+
+See [doc](https://symfonycasts.com/screencast/last-stack/flowbite)
+
+```bash
+bin/console importmap:require flowbite
+#bin/console importmap:require flowbite/plugin
+# Only if flowbite/plugin is needed
+npm init
+npm install -D flowbite
+```
+```js
+// tailwind.config.js
+plugins: [
+	require('flowbite/plugin'),
+],
 ```
 
 ## Clear symfony cache
@@ -148,6 +178,17 @@ Add [Tailwind CSS for Symfony](https://symfony.com/bundles/TailwindBundle/curren
 ```bash
 composer require symfonycasts/tailwind-bundle
 bin/console tailwind:init
+```
+
+Add [Tailwind CSS form theme plugin](https://symfony.com/doc/current/form/tailwindcss.html)
+```bash
+npm install -D @tailwindcss/forms
+```
+```js
+// tailwind.config.js
+plugins: [
+	require('@tailwindcss/forms'),
+],
 ```
 
 Add [Bootstrap Sass](https://github.com/twbs/bootstrap) (if required for the project)
