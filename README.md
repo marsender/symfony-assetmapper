@@ -114,12 +114,6 @@ plugins: [
 ],
 ```
 
-## Clear symfony cache
-
-```bash
-composer cache-clear
-```
-
 ## Memo to add asset mapper and Sass to an existing project
 
 Add asset-mapper package
