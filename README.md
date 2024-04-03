@@ -45,8 +45,9 @@ bin/console importmap:install
 Build for production
 ```bash
 composer cache-clear
-bin/console tailwind:build --minify
+bin/console tailwind:build --minify # or --watch
 bin/console sass:build # --watch
+rm -rf public/assets
 bin/console asset-map:compile
 ```
 or use the command
