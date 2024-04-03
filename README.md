@@ -38,6 +38,7 @@ sudo chown -R www-data:$USER var
 
 Install importmap vendor files
 ```bash
+npm install
 bin/console importmap:install
 ```
 
