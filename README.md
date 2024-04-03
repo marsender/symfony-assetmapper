@@ -26,13 +26,12 @@ This project require the following to get started :
 Clone [Symfony assetmapper repository](https://github.com/marsender/symfony-assetmapper)
 
 ```bash
-cd /opt/git/marsender/
 git clone git@github.com:marsender/symfony-assetmapper.git
+cd symfony-assetmapper
 ```
 
 Install php dependencies
 ```bash
-cd /opt/git/marsender/symfony-assetmapper
 composer install
 sudo chown -R www-data:$USER var
 ```
@@ -40,47 +39,6 @@ sudo chown -R www-data:$USER var
 Install importmap vendor files
 ```bash
 bin/console importmap:install
-```
-
-Add project host
-```bash
-sudo nano /etc/hosts
-127.0.0.1 symfony-assetmapper.localhost
-```
-
-Add apache config
-```
-sudo nano /etc/apache2/sites-available/symfony-assetmapper.conf
-<VirtualHost *:80>
-
-	# http://symfony-assetmapper.localhost/
-	ServerName symfony-assetmapper.localhost
-
-	<FilesMatch \.php$>
-		SetHandler proxy:unix:/var/run/php/php8.2-fpm.sock|fcgi://dummy
-	</FilesMatch>
-
-	LogLevel warn
-	ErrorLog ${APACHE_LOG_DIR}/error_symfony-assetmapper.log
-	CustomLog ${APACHE_LOG_DIR}/access_symfony-assetmapper.log combined
-
-	# Security
-	ServerSignature Off
-
-	DocumentRoot /opt/git/marsender/symfony-assetmapper/public/
-	<Directory /opt/git/marsender/symfony-assetmapper/public/>
-		Require all granted
-		AllowOverride None
-		FallbackResource /index.php
-	</Directory>
-
-</VirtualHost>
-```
-
-Enable new website
-```bash
-sudo a2ensite symfony-assetmapper
-sudo apache2ctl restart
 ```
 
 Build for production
@@ -212,7 +170,6 @@ rm -rf .git
 
 Copy the templates
 ```bash
-cd /opt/git/marsender/symfony-assetmapper
 cp ~/symfony-docker/compose.* ./
 cp ~/symfony-docker/.dockerignore ./
 cp ~/symfony-docker/Dockerfile ./
