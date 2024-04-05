@@ -1,5 +1,5 @@
 app:
-  title: Symfony asset mapper
+  title: Asset mapper
 
 test:
   title: Tests

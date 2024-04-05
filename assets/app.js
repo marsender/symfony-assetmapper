@@ -1,5 +1,5 @@
 import './bootstrap.js';
-import { initFlowbite } from 'flowbite';
+//import { initFlowbite } from 'flowbite';
 
 /*
  * Welcome to your app's main JavaScript file!
@@ -15,9 +15,9 @@ import './styles/app.css';
 Fixing Flowbite JS & Turbo
 https://symfonycasts.com/screencast/last-stack/flowbite
 */
-document.addEventListener('turbo:render', () => {
-	initFlowbite();
-});
-document.addEventListener('turbo:frame-render', () => {
-	initFlowbite();
-});
+// document.addEventListener('turbo:render', () => {
+// 	initFlowbite();
+// });
+// document.addEventListener('turbo:frame-render', () => {
+// 	initFlowbite();
+// });

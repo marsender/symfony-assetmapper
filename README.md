@@ -68,10 +68,12 @@ bin/console importmap:require tailwindcss
 bin/console importmap:remove tailwindcss
 ```
 
-## Debugging: Seeing All Mapped Assets
+## Debugging
 
 ```bash
+# Seeing All Mapped Assets
 bin/console debug:asset-map --full
+bin/console debug:config symfonycasts_tailwind
 ```
 
 ## Update importmap packages
@@ -114,6 +116,12 @@ npm install -D flowbite
 plugins: [
 	require('flowbite/plugin'),
 ],
+```
+
+## Install Flowbite Datepicker
+
+```bash
+bin/console importmap:require flowbite-datepicker
 ```
 
 ## Memo to add asset mapper and Sass to an existing project

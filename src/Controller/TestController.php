@@ -6,9 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
+#[Route('/test')]
 class TestController extends AbstractController
 {
-	#[Route('/test', name: 'app_test')]
+	#[Route('/', name: 'app_test')]
 	public function index(): Response
 	{
 		// List of test with 'app_test_' path prefix

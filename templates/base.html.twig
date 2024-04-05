@@ -25,12 +25,14 @@
 			{% include('util/_navbar.html.twig') %}
 		{% endblock %}
 		<main role="main">
-			<div class="container">
+			<div class="container p-4 dark:text-white">
 				{% block body %}
 					{{ 'error.body_is_missing' }}
 				{% endblock %}
 			</div>
 		</main>
-		{% block footer %}{% endblock %}
+		{% block footer %}
+		{% endblock %}
+		{% include('util/_modal.html.twig') %}
 	</body>
 </html>
