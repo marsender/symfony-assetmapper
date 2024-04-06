@@ -7,8 +7,6 @@ module.exports = {
 		files: [
 			'./assets/**/*.js',
 			'./templates/**/*.html.twig',
-			// "./node_modules/flowbite/**/*.js",
-			// "./vendor/tales-from-a-dev/flowbite-bundle/templates/**/*.html.twig",
 		],
 	},
 	theme: {
@@ -34,6 +32,5 @@ module.exports = {
 		}),
 		require('@tailwindcss/forms'),
 		require('@tailwindcss/typography'),
-		//require('flowbite/plugin'),
 	],
 };

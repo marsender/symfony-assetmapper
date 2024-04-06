@@ -2,21 +2,20 @@
 
 ![CI](https://github.com/marsender/symfony-assetmapper/workflows/CI/badge.svg)
 
-This project is a starter webapp with Symfony 7 assetmapper, Tailwind, Flowbite and Sass.
+This project is a starter webapp with Symfony 7 assetmapper, Tailwind and Sass (no Node required!).
 It also contains a Docker github CI.
 
-References :
+References:
 
 - [Symfony AssetMapper doc](https://symfony.com/doc/current/frontend/asset_mapper.html)
 - [Upgrading Symfony Websites to AssetMapper](https://symfony.com/blog/upgrading-symfony-websites-to-assetmapper)
 - [Tailwind CSS bundle for Symfony](https://symfony.com/bundles/TailwindBundle/current/index.html)
-- [Flowbite](https://flowbite.com/docs/getting-started/symfony/)
 - [Sass bundle for Symfony](https://symfony.com/bundles/SassBundle/current/index.html)
 - [Symfony Docker](https://github.com/dunglas/symfony-docker)
 
 ## Requirements
 
-This project require the following to get started :
+This project require the following to get started:
 
 - PHP 8.2
 
@@ -55,8 +54,8 @@ Open the app in your browser [http://symfony-assetmapper.localhost/](http://symf
 Add or remove importmaps
 ```bash
 cat importmap.php
-bin/console importmap:require tailwindcss
-bin/console importmap:remove tailwindcss
+bin/console importmap:require packagename
+bin/console importmap:remove packagename
 ```
 
 Debugging
@@ -83,17 +82,6 @@ bin/console importmap:install
 Install ES Module Shims for older browsers compatibility
 ```bash
 bin/console importmap:require es-module-shims
-```
-
-Install Flowbite
-See [doc](https://symfonycasts.com/screencast/last-stack/flowbite)
-```bash
-bin/console importmap:require flowbite
-```
-
-Install Flowbite Datepicker
-```bash
-bin/console importmap:require flowbite-datepicker
 ```
 
 ## Tailwind dev watch
