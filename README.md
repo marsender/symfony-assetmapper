@@ -2,7 +2,7 @@
 
 ![CI](https://github.com/marsender/symfony-assetmapper/workflows/CI/badge.svg)
 
-This project is a starter webapp with Symfony 7 assetmapper, Tailwind and Sass.
+This project is a starter webapp with Symfony 7 assetmapper, Tailwind, Flowbite and Sass.
 It also contains a Docker github CI.
 
 References :
@@ -19,7 +19,6 @@ References :
 This project require the following to get started :
 
 - PHP 8.2
-- Web server Apache 2.4
 
 ## Install
 
@@ -34,13 +33,6 @@ Install php dependencies
 ```bash
 composer install
 sudo chown -R www-data:$USER var
-```
-
-Install importmap vendor files
-```bash
-# Only if you have npm packages
-#npm install
-bin/console importmap:install
 ```
 
 Build for production
@@ -60,25 +52,21 @@ Open the app in your browser [http://symfony-assetmapper.localhost/](http://symf
 
 # Delopper instructions
 
-## Add or remove importmaps
-
-This will add tailwind in /importmap.php file
-
+Add or remove importmaps
 ```bash
+cat importmap.php
 bin/console importmap:require tailwindcss
 bin/console importmap:remove tailwindcss
 ```
 
-## Debugging
-
+Debugging
 ```bash
 # Seeing All Mapped Assets
 bin/console debug:asset-map --full
 bin/console debug:config symfonycasts_tailwind
 ```
 
-## Update importmap packages
-
+Update importmap packages
 ```bash
 # List outedated packages
 bin/console importmap:outdated
@@ -86,44 +74,33 @@ bin/console importmap:outdated
 bin/console importmap:update # add packagename to update only one package
 ```
 
-## Install ES Module Shims for older browsers compatibility
+Reinstall importmap vendor modules if needed
+```bash
+rm -rf assets/vendor/
+bin/console importmap:install
+```
 
+Install ES Module Shims for older browsers compatibility
 ```bash
 bin/console importmap:require es-module-shims
 ```
 
-## Tailwind dev watch
-
-This will watch for changes to your assets/styles/app.css file and automatically recompile it when needed.
-If you refresh the page, the final app.css file will already contain the compiled CSS.
-
-```bash
-bin/console tailwind:build --watch
-```
-
-## Install Flowbite
-
+Install Flowbite
 See [doc](https://symfonycasts.com/screencast/last-stack/flowbite)
-
 ```bash
 bin/console importmap:require flowbite
-
-#bin/console importmap:require flowbite/plugin
-# Only if flowbite/plugin is needed
-#npm init
-#npm install -D flowbite
-```
-```js
-// tailwind.config.js
-plugins: [
-	require('flowbite/plugin'),
-],
 ```
 
-## Install Flowbite Datepicker
-
+Install Flowbite Datepicker
 ```bash
 bin/console importmap:require flowbite-datepicker
+```
+
+## Tailwind dev watch
+
+This will watch for changes to your assets and twig files and automatically recompile the application css it when needed.
+```bash
+bin/console tailwind:build --watch
 ```
 
 ## Memo to add asset mapper and Sass to an existing project
@@ -142,17 +119,6 @@ Add [Tailwind CSS for Symfony](https://symfony.com/bundles/TailwindBundle/curren
 ```bash
 composer require symfonycasts/tailwind-bundle
 bin/console tailwind:init
-```
-
-Add [Tailwind CSS form theme plugin](https://symfony.com/doc/current/form/tailwindcss.html)
-```bash
-npm install -D @tailwindcss/forms
-```
-```js
-// tailwind.config.js
-plugins: [
-	require('@tailwindcss/forms'),
-],
 ```
 
 ## Memo to add Symfony Docker templates to an existing project

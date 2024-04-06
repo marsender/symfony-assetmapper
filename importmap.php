@@ -28,7 +28,4 @@ return [
     'es-module-shims' => [
         'version' => '1.9.0',
     ],
-    'flowbite-datepicker' => [
-        'version' => '1.2.6',
-    ],
 ];
