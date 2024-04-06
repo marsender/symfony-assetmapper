@@ -20,19 +20,16 @@
 			{% endblock %}
 		{% endblock %}
 	</head>
-	<body class="p-5 bg-white dark:bg-gray-900">
+	<body id="modal-title" class="p-5 bg-white dark:bg-gray-900">
 		{% block header %}
 			{% include('util/_navbar.html.twig') %}
 		{% endblock %}
-		<main role="main">
-			<div class="container p-4 dark:text-white">
-				{% block body %}
-					{{ 'error.body_is_missing' }}
-				{% endblock %}
-			</div>
+		<main role="main" class="dark:text-white">
+			{% block body %}
+				{{ 'error.body_is_missing' }}
+			{% endblock %}
 		</main>
-		{% block footer %}
-		{% endblock %}
+		{% block footer %}{% endblock %}
 		{% include('util/_modal.html.twig') %}
 	</body>
 </html>

@@ -153,11 +153,6 @@ plugins: [
 ],
 ```
 
-Add [Bootstrap Sass](https://github.com/twbs/bootstrap) (if required for the project)
-```bash
-composer require twbs/bootstrap
-```
-
 ## Memo to add Symfony Docker templates to an existing project
 
 If not already done, [install Docker Compose](https://docs.docker.com/compose/install/) (v2.10+)
