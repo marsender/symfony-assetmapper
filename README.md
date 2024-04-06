@@ -38,7 +38,8 @@ sudo chown -R www-data:$USER var
 
 Install importmap vendor files
 ```bash
-npm install
+# Only if you have npm packages
+#npm install
 bin/console importmap:install
 ```
 
@@ -106,10 +107,11 @@ See [doc](https://symfonycasts.com/screencast/last-stack/flowbite)
 
 ```bash
 bin/console importmap:require flowbite
+
 #bin/console importmap:require flowbite/plugin
 # Only if flowbite/plugin is needed
-npm init
-npm install -D flowbite
+#npm init
+#npm install -D flowbite
 ```
 ```js
 // tailwind.config.js

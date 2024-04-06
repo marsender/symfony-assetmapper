@@ -25,16 +25,6 @@ return [
     '@hotwired/turbo' => [
         'version' => '8.0.4',
     ],
-    'flowbite' => [
-        'version' => '2.3.0',
-    ],
-    '@popperjs/core' => [
-        'version' => '2.11.8',
-    ],
-    'flowbite/dist/flowbite.min.css' => [
-        'version' => '2.3.0',
-        'type' => 'css',
-    ],
     'es-module-shims' => [
         'version' => '1.9.0',
     ],
