@@ -16,13 +16,11 @@ References:
 ## Requirements
 
 This project require the following to get started:
-
 - PHP 8.2
 
 ## Install
 
 Clone [Symfony assetmapper repository](https://github.com/marsender/symfony-assetmapper)
-
 ```bash
 git clone git@github.com:marsender/symfony-assetmapper.git
 cd symfony-assetmapper
@@ -42,12 +40,14 @@ bin/console sass:build # --watch
 rm -rf public/assets
 bin/console asset-map:compile
 ```
-or use the command
+
+Run app
 ```bash
-composer deploy
+symfony serve
 ```
 
-Open the app in your browser [http://symfony-assetmapper.localhost/](http://symfony-assetmapper.localhost/)
+Open the app in your browser http://127.0.0.1:8000/
+
 
 # Delopper instructions
 
@@ -77,6 +77,7 @@ Reinstall importmap vendor modules if needed
 ```bash
 rm -rf assets/vendor/
 bin/console importmap:install
+bin/console assets:install public
 ```
 
 Install ES Module Shims for older browsers compatibility
@@ -84,9 +85,7 @@ Install ES Module Shims for older browsers compatibility
 bin/console importmap:require es-module-shims
 ```
 
-## Tailwind dev watch
-
-This will watch for changes to your assets and twig files and automatically recompile the application css it when needed.
+Watch for changes to your assets and twig files and automatically recompile tailwind css it when needed
 ```bash
 bin/console tailwind:build --watch
 ```
