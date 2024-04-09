@@ -16,6 +16,7 @@ class TestController extends AbstractController
 		$items = [
 			'tailwind_form',
 			'tailwind_standalone_modal',
+			'toast',
 		];
 
 		return $this->render('test/index.html.twig', [
@@ -34,6 +35,20 @@ class TestController extends AbstractController
 	{
 		return $this->render('test/tailwind_form.html.twig', [
 			'modalTitle' => 'tailwind.form.title',
+		]);
+	}
+
+	#[Route(path: '/toast', name: 'app_test_toast')]
+	public function toast(): Response
+	{
+		$types = explode('|', 'error|success|info');
+		foreach ($types as $type) {
+			$message = sprintf('Message content for type: %s|notrans', $type);
+			$this->addFlash($type, $message);
+		}
+
+		return $this->render('test/toast.html.twig', [
+			'types' => $types,
 		]);
 	}
 }

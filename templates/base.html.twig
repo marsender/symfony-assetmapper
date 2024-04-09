@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% set user_authenticated = is_granted('IS_AUTHENTICATED_FULLY') %}
 <html class="dark">
 	<head>
 		<meta charset="UTF-8">
@@ -31,5 +30,6 @@
 		</main>
 		{% block footer %}{% endblock %}
 		{% include('util/_modal.html.twig') %}
+		{% include('util/_flash.html.twig') %}
 	</body>
 </html>

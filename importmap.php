@@ -16,6 +16,9 @@ return [
         'path' => './assets/app.js',
         'entrypoint' => true,
     ],
+    'eventkeys' => [
+        'path' => './assets/eventkeys.js',
+    ],
     '@symfony/stimulus-bundle' => [
         'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
     ],
@@ -27,5 +30,17 @@ return [
     ],
     'es-module-shims' => [
         'version' => '1.9.0',
+    ],
+    'stimulus-popover' => [
+        'version' => '6.2.0',
+    ],
+    'stimulus-notification' => [
+        'version' => '2.2.0',
+    ],
+    'stimulus-use' => [
+        'version' => '0.51.3',
+    ],
+    'hotkeys-js' => [
+        'version' => '3.13.7',
     ],
 ];

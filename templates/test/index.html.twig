@@ -7,21 +7,19 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="text-2xl font-semibold">{{ 'test.title'|trans }}</h1>
-	<div class="pt-4 flex justify-between">
-		<ul>
-			{% for item in items %}
-				{% set path = 'app_test_' ~ item %}
-				<li>
-					<a href="{{ path(path) }}">
-						Test
-						{{ item }}
-					</a>
-				</li>
-			{% endfor %}
+	<h1 class="my-4 text-2xl font-semibold">{{ 'test.title'|trans }}</h1>
+	<ul>
+		{% for item in items %}
+			{% set path = 'app_test_' ~ item %}
 			<li>
-				<a href="{{ path('app_test_tailwind_form') }}" data-turbo-frame="modal">Test turbo-frame modal</a>
+				<a href="{{ path(path) }}">
+					Test
+					{{ item }}
+				</a>
 			</li>
-		</ul>
-	</div>
+		{% endfor %}
+		<li>
+			<a href="{{ path('app_test_tailwind_form') }}" data-turbo-frame="modal">Test turbo-frame modal</a>
+		</li>
+	</ul>
 {% endblock %}

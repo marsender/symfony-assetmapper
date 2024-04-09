@@ -1,0 +1,12 @@
+<div id="toast-container" class="top-right" data-controller="toast">
+	{% for status in 'error|success|info'|split('|') %}
+		{% for message in app.flashes(status) %}
+			{% if '|notrans' in message %}
+				{% set message = message|replace({'|notrans': '' }) %}
+			{% else %}
+				{% set message = message|trans %}
+			{% endif %}
+			{{ include('util/_toast.html.twig', { status: status, message: message }) }}
+		{% endfor %}
+	{% endfor %}
+</div>
