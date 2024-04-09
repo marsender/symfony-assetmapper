@@ -1,4 +1,4 @@
-<div id="toast-container" class="top-right" data-controller="toast">
+<div id="toast-container" data-controller="toast" class="fixed top-5 right-4">
 	{% for status in 'error|success|info'|split('|') %}
 		{% for message in app.flashes(status) %}
 			{% if '|notrans' in message %}
