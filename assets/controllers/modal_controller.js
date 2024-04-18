@@ -2,7 +2,7 @@ import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
 	static targets = ['dialog', 'dynamicContent', 'loadingTemplate'];
-	//static outlets = [ 'title' ];
+
 	observer = null;
 
 	initialize() {
