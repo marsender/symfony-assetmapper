@@ -1,0 +1,13 @@
+{% extends 'modalBase.html.twig' %}
+
+{% block title %}
+	{{ 'test.title'|trans }}
+	- Symfony form
+{% endblock %}
+
+{% block body %}
+	<h1 class="my-4 text-2xl font-semibold">Symfony form</h1>
+	<div class="p-4 modal:p-0 bg-gray-800 rounded-lg">
+		{{ form(form) }}
+	</div>
+{% endblock %}

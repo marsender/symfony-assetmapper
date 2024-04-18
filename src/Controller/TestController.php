@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Form\TestType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
@@ -16,6 +18,7 @@ class TestController extends AbstractController
 		$items = [
 			'tailwind_form',
 			'tailwind_standalone_modal',
+			'symfony_form',
 			'toast',
 		];
 
@@ -30,11 +33,44 @@ class TestController extends AbstractController
 		return $this->render('test/tailwind_standalone_modal.html.twig');
 	}
 
+	/**
+	 * This route renders a twig that extends modalBase.html.twig
+	 * so it can be called either in a full page or in a modal turbo frame.
+	 */
 	#[Route(path: '/tailwind_form', name: 'app_test_tailwind_form')]
 	public function tailwindForm(): Response
 	{
-		return $this->render('test/tailwind_form.html.twig', [
-			'modalTitle' => 'tailwind.form.title',
+		return $this->render('test/tailwind_form.html.twig');
+	}
+
+	/**
+	 * This route renders a twig that extends modalBase.html.twig
+	 * so it can be called either in a full page or in a modal turbo frame.
+	 *
+	 * Form theme
+	 * Add this config to use the tailwind theme
+	 * # config/packages/twig.yaml
+	 * twig:
+	 *   form_themes: ['tailwind_2_layout.html.twig']
+	 *
+	 * @see https://symfony.com/doc/current/form/form_themes.html
+	 * @see https://github.com/symfony/symfony/blob/7.1/src/Symfony/Bridge/Twig/Resources/views/Form/tailwind_2_layout.html.twig
+	 */
+	#[Route(path: '/symfony_form', name: 'app_test_symfony_form')]
+	public function symfonyForm(Request $request): Response
+	{
+		$form = $this->createForm(TestType::class, null, [
+			'action' => $this->generateUrl('app_test_symfony_form'),
+		]);
+
+		$form->handleRequest($request);
+		if ($form->isSubmitted() && $form->isValid()) {
+			// $form->getData() holds the submitted values
+			return $this->redirectToRoute('app_test', [], Response::HTTP_SEE_OTHER);
+		}
+
+		return $this->render('test/symfony_form.html.twig', [
+			'form' => $form,
 		]);
 	}
 

@@ -1,5 +1,7 @@
 twig:
     file_name_pattern: '*.twig'
+    # Use this theme ./vendor/symfony/twig-bridge/Resources/views/Form/tailwind_2_layout.html.twig
+    form_themes: ['tailwind_2_layout.html.twig']
 
 when@test:
     twig:
