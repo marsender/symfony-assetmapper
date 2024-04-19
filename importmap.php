@@ -38,7 +38,7 @@ return [
         'version' => '2.2.0',
     ],
     'stimulus-use' => [
-        'version' => '0.51.3',
+        'version' => '0.52.2',
     ],
     'hotkeys-js' => [
         'version' => '3.13.7',
