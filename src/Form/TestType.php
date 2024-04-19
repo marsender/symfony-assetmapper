@@ -14,7 +14,7 @@ class TestType extends AbstractType
 	{
 		$builder
 			->add('task', TextType::class)
-			->add('dueDate', DateType::class)
+			->add('dueDate', DateType::class, ['required' => false])
 			->add('save', SubmitType::class);
 	}
 }

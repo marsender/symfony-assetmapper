@@ -30,6 +30,8 @@
 		</main>
 		{% block footer %}{% endblock %}
 		{% include('util/_modal.html.twig') %}
-		{% include('util/_flash.html.twig') %}
+		<div id="flash-container">
+			{% include('util/_flash.html.twig') %}
+		</div>
 	</body>
 </html>

@@ -65,7 +65,15 @@ class TestController extends AbstractController
 
 		$form->handleRequest($request);
 		if ($form->isSubmitted() && $form->isValid()) {
-			// $form->getData() holds the submitted values
+			$test = $form->getData();
+			$this->addFlash('info', 'Submit ok !');
+
+			// if ($request->headers->has('turbo-frame')) {
+			// 	$stream = $this->renderBlockView('voyage/new.html.twig', 'stream_success', [
+			// 		'voyage' => $voyage
+			// 	]);
+			// 	$this->addFlash('stream', $stream);
+			// }
 			return $this->redirectToRoute('app_test', [], Response::HTTP_SEE_OTHER);
 		}
 
