@@ -5,6 +5,9 @@
 				<turbo-stream action="append" target="flash-container">
 					<template>{{ include('util/_flash.html.twig') }}</template>
 				</turbo-stream>
+				{% for stream in app.flashes('stream') %}
+					{{ stream|raw }}
+				{% endfor %}
 			</turbo-frame>
 		</div>
 	</dialog>

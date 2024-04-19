@@ -65,15 +65,17 @@ class TestController extends AbstractController
 
 		$form->handleRequest($request);
 		if ($form->isSubmitted() && $form->isValid()) {
-			$test = $form->getData();
+			$data = $form->getData();
 			$this->addFlash('info', 'Submit ok !');
 
-			// if ($request->headers->has('turbo-frame')) {
-			// 	$stream = $this->renderBlockView('voyage/new.html.twig', 'stream_success', [
-			// 		'voyage' => $voyage
-			// 	]);
-			// 	$this->addFlash('stream', $stream);
-			// }
+			if ($request->headers->has('turbo-frame')) {
+				// @see https://symfonycasts.com/screencast/last-stack/modal-edit
+				$stream = $this->renderBlockView('test/_symfony_form_success.html.twig', 'stream_success', [
+					'data' => $data,
+				]);
+				$this->addFlash('stream', $stream);
+			}
+
 			return $this->redirectToRoute('app_test', [], Response::HTTP_SEE_OTHER);
 		}
 
