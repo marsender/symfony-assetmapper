@@ -6,7 +6,7 @@ module.exports = {
 		relative: true,
 		files: ['./assets/**/*.js', './templates/**/*.html.twig'],
 	},
-	darkMode: 'yolo',
+	//darkMode: 'yolo',
 	theme: {
 		extend: {
 			animation: {
