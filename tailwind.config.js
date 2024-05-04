@@ -4,11 +4,9 @@ const plugin = require('tailwindcss/plugin');
 module.exports = {
 	content: {
 		relative: true,
-		files: [
-			'./assets/**/*.js',
-			'./templates/**/*.html.twig',
-		],
+		files: ['./assets/**/*.js', './templates/**/*.html.twig'],
 	},
+	darkMode: 'yolo',
 	theme: {
 		extend: {
 			animation: {
@@ -20,6 +18,12 @@ module.exports = {
 					'100%': { opacity: 1 },
 				},
 			},
+			// Customize some colors
+			// colors: {
+			// 	blue: {
+			// 		700: '#74b1b2',
+			// 	},
+			// },
 		},
 	},
 	plugins: [
