@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\UX\Turbo\TurboBundle;
 
 #[Route('/test')]
 class TestController extends AbstractController
@@ -70,10 +71,13 @@ class TestController extends AbstractController
 
 			if ($request->headers->has('turbo-frame')) {
 				// @see https://symfonycasts.com/screencast/last-stack/modal-edit
-				$stream = $this->renderBlockView('test/_symfony_form_success.html.twig', 'stream_success', [
-					'data' => $data,
+				$request->setRequestFormat(TurboBundle::STREAM_FORMAT);
+
+				$info = sprintf('Stream data response: %s', $data['task']);
+
+				return $this->renderBlock('test/_stream_success.html.twig', 'stream_success', [
+					'info' => $info,
 				]);
-				$this->addFlash('stream', $stream);
 			}
 
 			return $this->redirectToRoute('app_test', [], Response::HTTP_SEE_OTHER);

@@ -1,0 +1,15 @@
+{% block stream_success %}
+	<turbo-stream action="prepend" targets="#stream-container">
+		<template>
+			<div class="text-green-700">
+				{{ info }}
+			</div>
+		</template>
+	</turbo-stream>
+	<turbo-stream action="update" target="modal">
+		<template></template>
+	</turbo-stream>
+	<turbo-stream action="append" target="flash-container">
+		<template>{{ include('util/_flash.html.twig') }}</template>
+	</turbo-stream>
+{% endblock %}
