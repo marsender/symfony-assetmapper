@@ -2,11 +2,11 @@
 	{% for status in 'error|success|info'|split('|') %}
 		{% for message in app.flashes(status) %}
 			{% if '|notrans' in message %}
-				{% set message = message|replace({'|notrans': '' }) %}
+				{% set message = message|replace({'|notrans': ''}) %}
 			{% else %}
 				{% set message = message|trans %}
 			{% endif %}
-			{{ include('util/_toast.html.twig', { status: status, message: message }) }}
+			{{ include('util/_toast.html.twig', {status: status, message: message}) }}
 		{% endfor %}
 	{% endfor %}
 </div>

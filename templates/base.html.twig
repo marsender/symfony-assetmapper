@@ -21,7 +21,7 @@
 	</head>
 	<body id="{% block body_id %}main{% endblock %}" class="p-5 bg-white dark:bg-gray-900">
 		{% block header %}
-			{% include('util/_navbar.html.twig') %}
+			{{ include(('util/_navbar.html.twig')) }}
 		{% endblock %}
 		<main role="main" class="dark:text-white">
 			{% block body %}
@@ -29,9 +29,9 @@
 			{% endblock %}
 		</main>
 		{% block footer %}{% endblock %}
-		{% include('util/_modal.html.twig') %}
+		{{ include(('util/_modal.html.twig')) }}
 		<div id="flash-container">
-			{% include('util/_flash.html.twig') %}
+			{{ include(('util/_flash.html.twig')) }}
 		</div>
 	</body>
 </html>
