@@ -22,7 +22,7 @@ This project require the following to get started:
 
 Clone [Symfony assetmapper repository](https://github.com/marsender/symfony-assetmapper)
 ```bash
-git clone git@github.com:marsender/symfony-assetmapper.git
+git clone https://github.com/marsender/symfony-assetmapper.git
 cd symfony-assetmapper
 ```
 
