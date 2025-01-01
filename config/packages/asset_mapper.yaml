@@ -7,9 +7,15 @@ framework:
     excluded_patterns:
       - '*/assets/styles/_*.scss'
       - '*/assets/styles/**/_*.scss'
+    missing_import_mode: strict
     exclude_dotfiles: true
     # set this option to false to disable the shim entirely
     # (your website/web app won't work in old browsers)
     #importmap_polyfill: false
-    #importmap_script_attributes:
-    #  crossorigin: 'anonymous'
+    importmap_script_attributes:
+      crossorigin: 'anonymous'
+
+when@prod:
+  framework:
+    asset_mapper:
+      missing_import_mode: warn
