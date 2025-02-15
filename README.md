@@ -110,7 +110,7 @@ bin/console tailwind:init
 
 ## Memo to add Symfony Docker templates to an existing project
 
-If not already done, [install Docker Compose](https://docs.docker.com/compose/install/) (v2.10+)
+If not already done, [install Docker Compose](https://docs.docker.com/compose/install/)
 
 Read the [official doc](https://github.com/dunglas/symfony-docker/blob/main/docs/existing-project.md)
 
@@ -174,14 +174,17 @@ rm symfony.lock
 composer symfony:sync-recipes --force --verbose
 ```
 
-Build the Docker images
+Build the docker images
 ```bash
-docker compose build --no-cache --pull
+docker compose build --no-cache
 ```
 
-Start the project
+Start the docker container
 ```bash
-docker compose up -d
+HTTP_PORT=8000 \
+HTTPS_PORT=4443 \
+HTTP3_PORT=4443 \
+docker compose up --pull always -d --wait
 ```
 
 Test database
@@ -194,6 +197,12 @@ Debug container
 docker ps
 docker exec -ti `container-id` /bin/bash # Enter the container
 docker logs --tail 500 --follow --timestamps `container-id` # Display container logs
+```
+
+Debug php container
+```bash
+docker compose exec php php --version
+docker compose exec -ti php /bin/bash
 ```
 
 Recreate database
@@ -215,4 +224,10 @@ To add a package available for the version of php configured for the docker cont
 docker compose exec php composer require `package-name`
 ```
 
-Browse `https://localhost`
+Browse `https//localhost:4443`
+
+Stop the docker container
+```bash
+docker compose down --remove-orphans
+sudo rm -rf ./docker # To remove application database
+```
