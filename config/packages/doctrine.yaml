@@ -7,8 +7,6 @@ doctrine:
         #server_version: '16'
 
         profiling_collect_backtrace: '%kernel.debug%'
-        # -DC- Disable save points to avoid fixtures error: "SAVEPOINT DOCTRINE_2 does not exist"
-        #use_savepoints: true
     orm:
         auto_generate_proxy_classes: true
         enable_lazy_ghost_objects: true
