@@ -102,6 +102,9 @@
 		],
 		"phpstan": [
 			"vendor/bin/phpstan analyse"
+		],
+		"fix": [
+			"composer php-cs-fixer && composer twig-cs-fixer"
 		]
 	},
 	"conflict": {
