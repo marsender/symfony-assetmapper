@@ -175,21 +175,21 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "4.2.4",
+            "version": "4.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "b37d160498ea91a2382a2ebe825c4ea6254fc0ec"
+                "reference": "7669f131d43b880de168b2d2df9687d152d6c762"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/b37d160498ea91a2382a2ebe825c4ea6254fc0ec",
-                "reference": "b37d160498ea91a2382a2ebe825c4ea6254fc0ec",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/7669f131d43b880de168b2d2df9687d152d6c762",
+                "reference": "7669f131d43b880de168b2d2df9687d152d6c762",
                 "shasum": ""
             },
             "require": {
-                "doctrine/deprecations": "^0.5.3|^1",
-                "php": "^8.1",
+                "doctrine/deprecations": "^1.1.5",
+                "php": "^8.2",
                 "psr/cache": "^1|^2|^3",
                 "psr/log": "^1|^2|^3"
             },
@@ -200,7 +200,7 @@
                 "phpstan/phpstan": "2.1.17",
                 "phpstan/phpstan-phpunit": "2.0.6",
                 "phpstan/phpstan-strict-rules": "^2",
-                "phpunit/phpunit": "10.5.46",
+                "phpunit/phpunit": "11.5.23",
                 "slevomat/coding-standard": "8.16.2",
                 "squizlabs/php_codesniffer": "3.13.1",
                 "symfony/cache": "^6.3.8|^7.0",
@@ -261,7 +261,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
-                "source": "https://github.com/doctrine/dbal/tree/4.2.4"
+                "source": "https://github.com/doctrine/dbal/tree/4.3.2"
             },
             "funding": [
                 {
@@ -277,7 +277,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-15T23:15:01+00:00"
+            "time": "2025-08-05T13:30:38+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -2780,16 +2780,16 @@
         },
         {
             "name": "symfony/doctrine-messenger",
-            "version": "v7.3.0",
+            "version": "v7.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/doctrine-messenger.git",
-                "reference": "099d9cd03f889c31c90d406fed07f25dc3732487"
+                "reference": "4d77230ef2d99aa630cf931621d0afb54ce10636"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/doctrine-messenger/zipball/099d9cd03f889c31c90d406fed07f25dc3732487",
-                "reference": "099d9cd03f889c31c90d406fed07f25dc3732487",
+                "url": "https://api.github.com/repos/symfony/doctrine-messenger/zipball/4d77230ef2d99aa630cf931621d0afb54ce10636",
+                "reference": "4d77230ef2d99aa630cf931621d0afb54ce10636",
                 "shasum": ""
             },
             "require": {
@@ -2832,7 +2832,7 @@
             "description": "Symfony Doctrine Messenger Bridge",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/doctrine-messenger/tree/v7.3.0"
+                "source": "https://github.com/symfony/doctrine-messenger/tree/v7.3.3"
             },
             "funding": [
                 {
@@ -2844,11 +2844,15 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-03-26T11:30:13+00:00"
+            "time": "2025-08-23T06:38:36+00:00"
         },
         {
             "name": "symfony/dotenv",
@@ -4204,16 +4208,16 @@
         },
         {
             "name": "symfony/messenger",
-            "version": "v7.3.1",
+            "version": "v7.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/messenger.git",
-                "reference": "716c89b86ce58c4946d436d862694971c999d1aa"
+                "reference": "d9e04339404ba2dcd04c24172125516dc0e06c35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/messenger/zipball/716c89b86ce58c4946d436d862694971c999d1aa",
-                "reference": "716c89b86ce58c4946d436d862694971c999d1aa",
+                "url": "https://api.github.com/repos/symfony/messenger/zipball/d9e04339404ba2dcd04c24172125516dc0e06c35",
+                "reference": "d9e04339404ba2dcd04c24172125516dc0e06c35",
                 "shasum": ""
             },
             "require": {
@@ -4273,7 +4277,7 @@
             "description": "Helps applications send and receive messages to/from other applications or via message queues",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/messenger/tree/v7.3.1"
+                "source": "https://github.com/symfony/messenger/tree/v7.3.3"
             },
             "funding": [
                 {
@@ -4285,11 +4289,15 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-27T19:55:54+00:00"
+            "time": "2025-08-13T11:49:31+00:00"
         },
         {
             "name": "symfony/mime",
@@ -5160,16 +5168,16 @@
         },
         {
             "name": "symfony/polyfill-php83",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php83.git",
-                "reference": "2fb86d65e2d424369ad2905e83b236a8805ba491"
+                "reference": "17f6f9a6b1735c0f163024d959f700cfbc5155e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php83/zipball/2fb86d65e2d424369ad2905e83b236a8805ba491",
-                "reference": "2fb86d65e2d424369ad2905e83b236a8805ba491",
+                "url": "https://api.github.com/repos/symfony/polyfill-php83/zipball/17f6f9a6b1735c0f163024d959f700cfbc5155e5",
+                "reference": "17f6f9a6b1735c0f163024d959f700cfbc5155e5",
                 "shasum": ""
             },
             "require": {
@@ -5216,7 +5224,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php83/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-php83/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -5228,11 +5236,15 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T11:45:10+00:00"
+            "time": "2025-07-08T02:45:35+00:00"
         },
         {
             "name": "symfony/polyfill-php84",
