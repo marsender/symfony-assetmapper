@@ -2,7 +2,9 @@
 
 ![CI](https://github.com/marsender/symfony-assetmapper/workflows/CI/badge.svg)
 
-This project is a starter webapp with Symfony 7 assetmapper, Tailwind and Sass (no Node required!).
+## Description
+
+This is a starter web application template build with Symfony 7 assetmapper, Tailwind and Sass (no Node required!).
 It also contains a Docker github CI.
 
 References:
