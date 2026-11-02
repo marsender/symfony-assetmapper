@@ -16,7 +16,7 @@
 		"doctrine/orm": "^3.5.2",
 		"phpdocumentor/reflection-docblock": "^5.3",
 		"runtime/frankenphp-symfony": "^0.2.0",
-		"symfony/asset": "7.3.*",
+		"symfony/asset": "8.1.*",
 		"symfony/asset-mapper": "7.3.*",
 		"symfony/console": "7.3.*",
 		"symfony/doctrine-messenger": "7.3.*",
